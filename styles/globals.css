@@ -6,6 +6,24 @@
   box-sizing: border-box;
 }
 
+body,
+html {
+  margin: 0;
+}
+
 #__next {
   min-height: 100vh;
 }
+
+/* .con {
+  scroll-snap-type: y mandatory;
+  scroll-snap-type: mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.kek {
+  scroll-snap-align: start;
+  height: 100vh;
+  flex-shrink: 0;
+} */
