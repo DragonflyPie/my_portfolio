@@ -18,7 +18,6 @@ const Layout = ({ children }: LayoutProps) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="h-screen flex flex-col snap-y snap-mandatory overflow-y-scroll ">
-        <TopBar />
         <main className="flex flex-col">{children}</main>
       </div>
     </>

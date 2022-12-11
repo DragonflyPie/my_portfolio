@@ -1,10 +1,26 @@
-import Contact from "../components/Contact";
+import React, { useRef } from "react";
+import Contacts from "../components/Contacts";
 import Project from "../components/projects/Project";
+import TopBar from "../components/TopBar";
 
 export default function Home() {
+  const welcomeRef = useRef<HTMLDivElement>(null);
+  const contactsRef = useRef<HTMLDivElement>(null);
+
+  const handleClick = (elementRef: React.RefObject<HTMLDivElement> | null) => {
+    if (elementRef !== null) {
+      elementRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
-      <div className="h-screen snap-center">
+      <TopBar
+        onClick={handleClick}
+        welcomeRef={welcomeRef}
+        contactsRef={contactsRef}
+      />
+      <div className="h-screen snap-center" ref={welcomeRef}>
         <h1>Hi</h1>
         <section>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque cum
@@ -37,7 +53,7 @@ export default function Home() {
       <Project bg="bg-teal-500" />
       <Project bg="bg-emerald-500" />
       <Project bg="bg-blue-500" />
-      <Contact />
+      <Contacts reference={contactsRef} />
     </>
   );
 }
