@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import Contacts from "../components/Contacts";
-import Project from "../components/projects/Project";
+import Project from "../components/Project";
 import TopBar from "../components/TopBar";
 import { useRouter } from "next/router";
 import strings from "../intl/stringsDic.json";
@@ -8,7 +8,9 @@ import strings from "../intl/stringsDic.json";
 export default function Home() {
   const welcomeRef = useRef<HTMLDivElement>(null);
   const contactsRef = useRef<HTMLDivElement>(null);
-  const { locale, locales } = useRouter();
+  const { locale } = useRouter();
+
+  const lang = locale as "en" | "ru";
 
   const handleClick = (elementRef: React.RefObject<HTMLDivElement> | null) => {
     if (elementRef !== null) {
@@ -23,8 +25,11 @@ export default function Home() {
         welcomeRef={welcomeRef}
         contactsRef={contactsRef}
       />
-      <div className="h-screen snap-center p-12" ref={welcomeRef}>
-        <h1>{locale === "en" ? strings.en.heading : strings.ru.heading}</h1>
+      <div
+        className="h-screen snap-center p-12 bg-slate-100 dark:bg-slate-600"
+        ref={welcomeRef}
+      >
+        <h1>{strings.heading[lang]}</h1>
         <section>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque cum
           culpa, fugiat ex, quis quod eveniet facere delectus totam odit ad.

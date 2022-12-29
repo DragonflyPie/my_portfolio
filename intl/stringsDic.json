@@ -1,10 +1,14 @@
 {
-  "en": {
-    "heading": "Hidfsdfsdf",
-    "footer": "parampampam"
+  "heading": {
+    "en": "Hello",
+    "ru": "Привет"
   },
-  "ru": {
-    "heading": "Привет!",
-    "footer": "парампампам"
+  "section-1": {
+    "en": "Hello",
+    "ru": "Привет"
+  },
+  "footer": {
+    "en": "Hello",
+    "ru": "Привет"
   }
 }

@@ -5,10 +5,10 @@ import { ThemeProvider } from "next-themes";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <ThemeProvider enableSystem={true} attribute="class">
+    <ThemeProvider enableSystem={true} attribute="class">
+      <Layout>
         <Component {...pageProps} />
-      </ThemeProvider>
-    </Layout>
+      </Layout>
+    </ThemeProvider>
   );
 }
