@@ -7,11 +7,7 @@ interface FlagProps {
 }
 
 const Flag = ({ country }: FlagProps) => {
-  return country === "en" ? (
-    <GbFlag height={24} width={32} />
-  ) : (
-    <RuFlag height={24} width={32} />
-  );
+  return country === "en" ? <GbFlag height={18} /> : <RuFlag height={18} />;
 };
 
 export default Flag;

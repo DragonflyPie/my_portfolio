@@ -1,4 +1,16 @@
 {
+  "about": {
+    "en": "About",
+    "ru": "Обо мне"
+  },
+  "projects": {
+    "en": "Projects",
+    "ru": "Проекты"
+  },
+  "contacts": {
+    "en": "Contacts",
+    "ru": "Контакты"
+  },
   "heading": {
     "en": "Hello",
     "ru": "Привет"

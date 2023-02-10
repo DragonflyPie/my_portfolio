@@ -4,11 +4,11 @@ import Logos from "../public/tech";
 import AnimateInside from "./AnimateInside";
 
 interface ProjectProps {
-  bg?: string;
   img?: string;
   title?: string;
   description?: string;
   techs?: string[];
+  reference?: React.Ref<HTMLDivElement>;
 }
 
 const logosDictionary = {
@@ -19,14 +19,14 @@ const logosDictionary = {
 type ObjectKey = keyof typeof logosDictionary;
 
 const Project = ({
-  bg = "bg-grey-500",
   img = "/randomImg.jpg",
   title = "kek",
   description = "dfjksdkfgjksdgk",
   techs = ["html", "css"],
+  reference,
 }: ProjectProps) => {
   return (
-    <div className={`${bg} h-screen shrink-0 snap-center`}>
+    <div className="h-screen shrink-0 snap-center">
       <h1>{title}</h1>
       <Image width={400} height={400} src={img} alt={title} />
       <div className="w-full flex justify-end gap-12">

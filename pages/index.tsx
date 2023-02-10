@@ -8,6 +8,7 @@ import strings from "../intl/stringsDic.json";
 export default function Home() {
   const welcomeRef = useRef<HTMLDivElement>(null);
   const contactsRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
   const { locale } = useRouter();
 
   const lang = locale as "en" | "ru";
@@ -24,13 +25,11 @@ export default function Home() {
         onClick={handleClick}
         welcomeRef={welcomeRef}
         contactsRef={contactsRef}
+        projectsRef={projectsRef}
       />
-      <div
-        className="h-screen snap-center p-12 bg-slate-100 dark:bg-slate-600"
-        ref={welcomeRef}
-      >
+      <div className="h-screen snap-center p-12" ref={welcomeRef}>
         <h1>{strings.heading[lang]}</h1>
-        <section>
+        <section className="">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque cum
           culpa, fugiat ex, quis quod eveniet facere delectus totam odit ad.
           Quibusdam recusandae similique nisi omnis libero sunt ea? Quod. Lorem,
@@ -58,9 +57,11 @@ export default function Home() {
           atque dicta nemo ducimus.
         </section>
       </div>
-      <Project bg="bg-teal-500" />
-      <Project bg="bg-emerald-500" />
-      <Project bg="bg-blue-500" />
+      <div ref={projectsRef}>
+        <Project />
+        <Project />
+        <Project />
+      </div>
       <Contacts reference={contactsRef} />
     </>
   );

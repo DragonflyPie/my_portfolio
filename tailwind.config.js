@@ -7,6 +7,11 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        heading: ["var(--font-inter)"],
+        navbar: ["var(--caveat-font)"],
+        main: ["var(--lobsta-kek)"],
+      },
       keyframes: {
         // "slide-left": {
         //   "0%": { transform: "translateX(-200px)", opacity: 0 },

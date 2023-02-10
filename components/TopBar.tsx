@@ -5,18 +5,27 @@ import React, { useEffect, useState } from "react";
 import { MdDarkMode } from "react-icons/md";
 import { MdOutlineLightMode } from "react-icons/md";
 import Flag from "./Flag";
+import strings from "../intl/stringsDic.json";
 
 interface TopBarProps {
   onClick: (elementRef: React.RefObject<HTMLDivElement>) => void;
   welcomeRef: React.RefObject<HTMLDivElement>;
   contactsRef: React.RefObject<HTMLDivElement>;
+  projectsRef: React.RefObject<HTMLDivElement>;
 }
 
-const TopBar = ({ onClick, welcomeRef, contactsRef }: TopBarProps) => {
+const TopBar = ({
+  onClick,
+  welcomeRef,
+  contactsRef,
+  projectsRef,
+}: TopBarProps) => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
   const router = useRouter();
   const { locale, asPath } = router;
+
+  const lang = locale as "en" | "ru";
 
   const localeToSwitch = locale === "en" ? "ru" : "en";
   const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
@@ -30,33 +39,39 @@ const TopBar = ({ onClick, welcomeRef, contactsRef }: TopBarProps) => {
   }
 
   return (
-    <nav className="flex justify-end content-center gap-8 fixed bg-transparent mr-0 w-screen p-5 pr-10 z-10">
-      <a className="cursor-pointer" onClick={() => onClick(welcomeRef)}>
-        HOME
+    <nav className="flex justify-around font-navbar  md:justify-end md:gap-10 content-center fixed w-screen md:right-4 lg:w-fit lg:rounded-b-2xl bg-opacity-80 dark:bg-opacity-80 bg-slate-200 dark:bg-slate-600 py-4 md:p-4 z-10">
+      {/* <nav className="flex justify-end content-center gap-8 fixed w-screen md:w-fit md:rounded-3xl md:right-6 bg-opacity-60 dark:bg-opacity-80 bg-slate-200 dark:bg-slate-600 p-2 md:p-5 z-10"> */}
+      <a
+        className="cursor-pointer font-primary"
+        onClick={() => onClick(welcomeRef)}
+      >
+        {strings.about[lang].toUpperCase()}
+      </a>
+      <a className="cursor-pointer" onClick={() => onClick(projectsRef)}>
+        {strings.projects[lang].toUpperCase()}
       </a>
       <a className="cursor-pointer" onClick={() => onClick(contactsRef)}>
-        CONTACTS
+        {strings.contacts[lang].toUpperCase()}
       </a>
-      <button onClick={toggleTheme}>
-        {theme === "dark" ? (
-          <MdOutlineLightMode size={28} />
-        ) : (
-          <MdDarkMode size={28} />
-        )}
-      </button>
-      <Link
-        href="/"
-        as={asPath}
-        locale={localeToSwitch}
-        className="flex justify-center"
-      >
-        <span className="flex justify-center gap-1 items-center">
-          <span className="text-center w-8">
-            {localeToSwitch.toUpperCase()}
+      <div className="flex gap-5">
+        <button onClick={toggleTheme}>
+          {theme === "dark" ? (
+            <MdOutlineLightMode size={24} />
+          ) : (
+            <MdDarkMode size={24} />
+          )}
+        </button>
+        <Link
+          href="/"
+          as={asPath}
+          locale={localeToSwitch}
+          className="flex justify-center"
+        >
+          <span className="flex justify-center gap-1 items-center">
+            <Flag country={localeToSwitch} />
           </span>
-          <Flag country={localeToSwitch} />
-        </span>
-      </Link>
+        </Link>
+      </div>
     </nav>
   );
 };
