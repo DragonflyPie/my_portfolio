@@ -1,11 +1,12 @@
 import { useTheme } from "next-themes";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { MdDarkMode } from "react-icons/md";
 import { MdOutlineLightMode } from "react-icons/md";
 import Flag from "./Flag";
 import strings from "../intl/stringsDic.json";
+import useOutsideClick from "./useOutsideClick";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 interface TopBarProps {
   onClick: (elementRef: React.RefObject<HTMLDivElement>) => void;
@@ -21,14 +22,30 @@ const TopBar = ({
   projectsRef,
 }: TopBarProps) => {
   const [mounted, setMounted] = useState(false);
+  const [open, setOpen] = useState(false);
+
   const { theme, setTheme } = useTheme();
   const router = useRouter();
-  const { locale, asPath } = router;
+  const { locale } = router;
 
   const lang = locale as "en" | "ru";
 
-  const localeToSwitch = locale === "en" ? "ru" : "en";
   const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
+
+  const handleOpen = () => {
+    setOpen(!open);
+  };
+
+  const closeDropdown = () => {
+    setOpen(false);
+  };
+
+  const handleClickFlag = (country?: string | false) => {
+    router.push("/", "/", { locale: country });
+    setOpen(false);
+  };
+
+  const ref = useOutsideClick(closeDropdown);
 
   useEffect(() => {
     setMounted(true);
@@ -56,21 +73,39 @@ const TopBar = ({
       <div className="flex gap-5">
         <button onClick={toggleTheme}>
           {theme === "dark" ? (
-            <MdOutlineLightMode size={24} />
+            <MdOutlineLightMode size={24} className="hover:animate-spin" />
           ) : (
             <MdDarkMode size={24} />
           )}
         </button>
-        <Link
-          href="/"
-          as={asPath}
-          locale={localeToSwitch}
-          className="flex justify-center"
+        <div
+          className="flex flex-col content-center items-center justify-center relative"
+          ref={ref}
         >
-          <span className="flex justify-center gap-1 items-center">
-            <Flag country={localeToSwitch} />
-          </span>
-        </Link>
+          <button
+            onClick={handleOpen}
+            className="flex justify-center gap-1 items-center"
+          >
+            {locale?.toLocaleUpperCase()}
+            <MdOutlineKeyboardArrowDown />
+          </button>
+          {open ? (
+            <ul className="absolute bg-slate-500 top-6 content-center items-center flex flex-col gap-3 p-2 rounded">
+              <li className="p-0 m-0 flex">
+                <button onClick={() => handleClickFlag("en")}>
+                  <Flag country={"en"}></Flag>
+                </button>
+              </li>
+              <li className="p-0 m-0 flex">
+                <button onClick={() => handleClickFlag("ru")}>
+                  <Flag country={"ru"}></Flag>
+                </button>
+              </li>
+            </ul>
+          ) : (
+            ""
+          )}
+        </div>
       </div>
     </nav>
   );
