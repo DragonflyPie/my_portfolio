@@ -4,6 +4,8 @@ import Project from "../components/Project";
 import TopBar from "../components/TopBar";
 import { useRouter } from "next/router";
 import strings from "../intl/stringsDic.json";
+import ScrollAnimation from "../components/ScrollAnimation";
+import useScrolledToTop from "../components/useScrolledToTop";
 
 export default function Home() {
   const welcomeRef = useRef<HTMLDivElement>(null);
@@ -27,7 +29,7 @@ export default function Home() {
         contactsRef={contactsRef}
         projectsRef={projectsRef}
       />
-      <div className="h-screen snap-center p-12" ref={welcomeRef}>
+      <div className="h-screen p-12" ref={welcomeRef}>
         <h1>{strings.heading[lang]}</h1>
         <section className="">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque cum
@@ -57,6 +59,9 @@ export default function Home() {
           atque dicta nemo ducimus.
         </section>
       </div>
+
+      <ScrollAnimation />
+
       <div ref={projectsRef}>
         <Project />
         <Project />

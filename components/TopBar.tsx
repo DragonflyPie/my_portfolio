@@ -73,7 +73,7 @@ const TopBar = ({
       <div className="flex gap-5">
         <button onClick={toggleTheme}>
           {theme === "dark" ? (
-            <MdOutlineLightMode size={24} className="hover:animate-spin" />
+            <MdOutlineLightMode size={24} className="hover:animate-spin-slow" />
           ) : (
             <MdDarkMode size={24} />
           )}
