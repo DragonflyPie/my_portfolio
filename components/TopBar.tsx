@@ -56,7 +56,7 @@ const TopBar = ({
   }
 
   return (
-    <nav className="flex justify-around font-navbar  md:justify-end md:gap-10 content-center fixed w-screen md:right-4 lg:w-fit lg:rounded-b-2xl bg-opacity-80 dark:bg-opacity-80 bg-slate-200 dark:bg-slate-600 py-4 md:p-4 z-10">
+    <nav className="flex justify-around font-navbar backdrop-blur-sm bg-opacity-60 bg-slate-200 dark:bg-slate-600 dark:bg-opacity-50 md:justify-end md:gap-10 content-center fixed w-screen md:right-4 lg:w-fit lg:rounded-b-2xl py-4 md:p-4 z-10">
       {/* <nav className="flex justify-end content-center gap-8 fixed w-screen md:w-fit md:rounded-3xl md:right-6 bg-opacity-60 dark:bg-opacity-80 bg-slate-200 dark:bg-slate-600 p-2 md:p-5 z-10"> */}
       <a
         className="cursor-pointer font-primary"
@@ -90,7 +90,7 @@ const TopBar = ({
             <MdOutlineKeyboardArrowDown />
           </button>
           {open ? (
-            <ul className="absolute bg-slate-500 top-6 content-center items-center flex flex-col gap-3 p-2 rounded">
+            <ul className="absolute top-6 right-1 bg-slate-400 content-center items-center flex flex-col gap-3 p-2 rounded">
               <li className="p-0 m-0 flex">
                 <button onClick={() => handleClickFlag("en")}>
                   <Flag country={"en"}></Flag>

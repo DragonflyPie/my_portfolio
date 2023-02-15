@@ -5,7 +5,6 @@ import TopBar from "../components/TopBar";
 import { useRouter } from "next/router";
 import strings from "../intl/stringsDic.json";
 import ScrollAnimation from "../components/ScrollAnimation";
-import useScrolledToTop from "../components/useScrolledToTop";
 
 export default function Home() {
   const welcomeRef = useRef<HTMLDivElement>(null);
