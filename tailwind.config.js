@@ -26,7 +26,7 @@ module.exports = {
       animation: {
         // "slide-left": "slide-left 1500ms cubic-bezier(.48,.48,.45,1.11)",
         // fade: "fade 400ms ease-in-out",
-        // "spin-slow": "spin 10s linear infinite",
+        "spin-slow": "spin 10s linear infinite",
       },
     },
   },

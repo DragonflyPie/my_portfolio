@@ -1,20 +1,21 @@
 import { RefObject, useEffect, useState } from "react";
 
-function useElementOnScreen(ref: RefObject<Element>, rootMargin = "0px") {
+function useElementOnScreen(
+  ref: RefObject<Element>,
+
+  threshold = 0
+) {
   const [isIntersecting, setIsIntersecting] = useState(false);
 
   useEffect(() => {
-    const outerObsersver = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) setIsIntersecting(false);
-      },
-      { rootMargin }
-    );
+    const outerObsersver = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) setIsIntersecting(false);
+    }, {});
     const innerObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) setIsIntersecting(true);
       },
-      { rootMargin: "-300px 0px" }
+      { rootMargin: "-300px 0px", threshold: threshold }
     );
 
     if (ref.current) {

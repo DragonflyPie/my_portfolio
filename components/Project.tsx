@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Logos from "../public/tech";
 import AnimateInside from "./AnimateInside";
+import AppearInside from "./AppearInside";
 
 interface ProjectProps {
   img?: string;
@@ -19,16 +20,30 @@ const logosDictionary = {
 type ObjectKey = keyof typeof logosDictionary;
 
 const Project = ({
-  img = "/randomImg.jpg",
+  img = "/testImg.png",
   title = "kek",
   description = "dfjksdkfgjksdgk",
   techs = ["html", "css"],
   reference,
 }: ProjectProps) => {
   return (
-    <div className="h-screen shrink-0 snap-center">
-      <h1>{title}</h1>
-      <Image width={400} height={400} src={img} alt={title} />
+    <div className="flex flex-col h-screen shrink-0 ">
+      <div className="grid grid-cols-1 xl:grid-cols-2 px-5 w-full h-2/3">
+        <AppearInside>
+          <div className="relative w-full h-full ">
+            <Image
+              src={img}
+              alt={title}
+              fill
+              style={{ objectFit: "contain" }}
+              sizes="(max-width: 768px) 100vw,
+            (max-width: 1200px) 50vw,
+            33vw"
+            />
+          </div>
+        </AppearInside>
+        <div className="">{description}</div>
+      </div>
       <div className="w-full flex justify-end gap-12">
         {techs.map((tech, index) => {
           if (logosDictionary.hasOwnProperty(tech)) {
