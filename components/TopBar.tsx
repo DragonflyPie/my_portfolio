@@ -7,6 +7,8 @@ import Flag from "./Flag";
 import strings from "../intl/stringsDic.json";
 import useOutsideClick from "./useOutsideClick";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { RxDoubleArrowUp } from "react-icons/rx";
+import useScrolledToTop from "./useScrolledToTop";
 
 interface TopBarProps {
   onClick: (elementRef: React.RefObject<HTMLDivElement>) => void;
@@ -27,6 +29,8 @@ const TopBar = ({
   const { theme, setTheme } = useTheme();
   const router = useRouter();
   const { locale } = router;
+
+  const onTop = useScrolledToTop();
 
   const lang = locale as "en" | "ru";
 
@@ -56,35 +60,65 @@ const TopBar = ({
   }
 
   return (
-    <nav className="flex justify-around font-navbar backdrop-blur-sm bg-opacity-60 bg-slate-200 dark:bg-slate-600 dark:bg-opacity-50 md:justify-end md:gap-10 content-center fixed w-screen md:right-4 lg:w-fit lg:rounded-b-2xl py-4 md:p-4 z-10">
-      {/* <nav className="flex justify-end content-center gap-8 fixed w-screen md:w-fit md:rounded-3xl md:right-6 bg-opacity-60 dark:bg-opacity-80 bg-slate-200 dark:bg-slate-600 p-2 md:p-5 z-10"> */}
-      <a
-        className="cursor-pointer font-primary"
-        onClick={() => onClick(welcomeRef)}
-      >
-        {strings.about[lang].toUpperCase()}
-      </a>
-      <a className="cursor-pointer" onClick={() => onClick(projectsRef)}>
-        {strings.projects[lang].toUpperCase()}
-      </a>
-      <a className="cursor-pointer" onClick={() => onClick(contactsRef)}>
-        {strings.contacts[lang].toUpperCase()}
-      </a>
+    <nav className="flex justify-between md:justify-end font-navbar backdrop-blur-sm bg-opacity-20 bg-slate-200 dark:bg-slate-600 dark:bg-opacity-50 content-center fixed w-screen lg:rounded-b-2xl py-2 px-5 md:px-6 z-10">
+      {/* <nav className="flex justify-between font-navbar backdrop-blur-sm bg-opacity-60 bg-slate-200 dark:bg-slate-600 dark:bg-opacity-50 md:justify-end md:gap-10 content-center fixed w-screen   lg:rounded-b-2xl py-2 px-5 z-10"> */}
+      <div className="cursor-pointer flex items-center">
+        {!onTop ? (
+          <a
+            className="opacity-1 duration-500"
+            onClick={() => onClick(welcomeRef)}
+          >
+            <RxDoubleArrowUp
+              size={20}
+              className="hover:drop-shadow-dark dark:hover:drop-shadow-light"
+            />
+          </a>
+        ) : (
+          <a
+            className="invisible opacity-0 duration-500"
+            onClick={() => onClick(welcomeRef)}
+          >
+            <RxDoubleArrowUp
+              size={20}
+              className=" hover:drop-shadow-dark dark:hover:drop-shadow-light"
+            />
+          </a>
+        )}
+      </div>
+      <div className="flex justify-around grow md:grow-0 px-5  md:justify-end md:gap-10">
+        <a
+          className="cursor-pointer hover:drop-shadow-dark dark:hover:drop-shadow-light duration-300"
+          onClick={() => onClick(projectsRef)}
+        >
+          {strings.projects[lang].toUpperCase()}
+        </a>
+
+        <a
+          className="cursor-pointer hover:drop-shadow-dark dark:hover:drop-shadow-light duration-300"
+          onClick={() => onClick(contactsRef)}
+        >
+          {strings.contacts[lang].toUpperCase()}
+        </a>
+      </div>
       <div className="flex gap-5">
-        <button onClick={toggleTheme}>
+        <button onClick={toggleTheme} className="">
           {theme === "dark" ? (
-            <MdOutlineLightMode size={24} className="hover:animate-spin-slow" />
+            <MdOutlineLightMode
+              size={24}
+              className="hover:animate-spin-slow "
+            />
           ) : (
-            <MdDarkMode size={24} />
+            <MdDarkMode size={24} className="hover:animate-wiggle" />
           )}
         </button>
         <div
           className="flex flex-col content-center items-center justify-center relative"
+          // className="flex flex-col content-center items-center justify-center relative"
           ref={ref}
         >
           <button
             onClick={handleOpen}
-            className="flex justify-center gap-1 items-center"
+            className="flex justify-center gap-1 items-center hover:drop-shadow-dark dark:hover:drop-shadow-light duration-300"
           >
             {locale?.toLocaleUpperCase()}
             <MdOutlineKeyboardArrowDown />
