@@ -3,15 +3,15 @@ import useElementOnScreen from "./useElementOnScreen";
 
 const AppearInside = ({ children }: React.PropsWithChildren) => {
   const ref = useRef<HTMLDivElement>(null);
-  const onScreen = useElementOnScreen(ref, 0.5);
+  const onScreen = useElementOnScreen(ref, 0.2);
 
   return (
     <div
       ref={ref}
       className={
         onScreen
-          ? "opacity-1  duration-1000 w-full h-full"
-          : "opacity-0 blur-sm "
+          ? "opacity-1  duration-1000 relative h-full grow"
+          : "opacity-0 blur-sm h-full"
       }
     >
       {children}

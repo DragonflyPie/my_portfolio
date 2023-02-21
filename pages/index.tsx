@@ -5,12 +5,17 @@ import TopBar from "../components/TopBar";
 import { useRouter } from "next/router";
 import strings from "../intl/stringsDic.json";
 import ScrollAnimation from "../components/ScrollAnimation";
+import Logos from "../components/Icons";
+import useMediaQuery from "../components/useMediaQuery";
 
 export default function Home() {
   const welcomeRef = useRef<HTMLDivElement>(null);
   const contactsRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
+  const mobile = useMediaQuery();
   const { locale } = useRouter();
+
+  const iconSize = mobile ? 64 : 128;
 
   const lang = locale as "en" | "ru";
 
@@ -62,7 +67,13 @@ export default function Home() {
       <ScrollAnimation />
 
       <div ref={projectsRef}>
-        <Project />
+        <Project
+          techs={[
+            <Logos.Next size={iconSize} />,
+            <Logos.ReactIcon size={iconSize} />,
+            <Logos.Tailwind size={iconSize} />,
+          ]}
+        />
         <Project />
         <Project />
       </div>
