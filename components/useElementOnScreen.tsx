@@ -15,7 +15,7 @@ function useElementOnScreen(
       ([entry]) => {
         if (entry.isIntersecting) setIsIntersecting(true);
       },
-      { rootMargin: "-300px 0px", threshold: threshold }
+      { rootMargin: "-10% 0px", threshold: threshold }
     );
 
     if (ref.current) {

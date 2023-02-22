@@ -45,7 +45,8 @@ const TopBar = ({
   };
 
   const handleClickFlag = (country?: string | false) => {
-    router.push("/", "/", { locale: country });
+    router.push("/", "/", { locale: country, scroll: false });
+
     setOpen(false);
   };
 
