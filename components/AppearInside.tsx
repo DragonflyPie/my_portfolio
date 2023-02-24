@@ -10,8 +10,8 @@ const AppearInside = ({ children }: React.PropsWithChildren) => {
       ref={ref}
       className={
         onScreen
-          ? "opacity-1  duration-1000 relative aspect-video"
-          : "opacity-0 blur-sm aspect-video"
+          ? "opacity-1  duration-1000 relative w-full h-full aspect-video"
+          : "opacity-0 blur-sm h-full "
       }
     >
       {children}

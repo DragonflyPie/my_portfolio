@@ -9,7 +9,7 @@ const AnimateInside = ({ children, index }: AnimateProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const onScreen = useElementOnScreen(ref);
 
-  const delay = `${(index + 1) * 200}ms`;
+  const delay = `${(index + 1) * 100}ms`;
 
   return (
     <div

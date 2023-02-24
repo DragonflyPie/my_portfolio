@@ -21,29 +21,22 @@ const Project = ({
   links = { vercel: "www.vercel.com", github: "www.github.com" },
 }: ProjectProps) => {
   return (
-    <div className="flex flex-col h-screen p-4">
-      <div className="w-full h-full bg-slate-300 rounded-xl">
-        <div className="grid grid-cols-1  lg:grid-cols-5 h-full grid-rows-[auto_1fr_2fr_1fr] lg:grid-rows-[auto_2fr_1fr]">
-          <div className="col-span-5 lg:col-span-3 ">
+    <div className="flex flex-col h-screen p-4 lg:p-6">
+      <div className="w-full h-full bg-slate-300 rounded-xl p-5">
+        <div className="flex flex-col justify-between xl:grid xl:grid-cols-5 h-full max-h-full xl:grid-rows-[4fr_2fr_1fr]">
+          <div className="col-span-5 xl:col-span-3 flex flex-col justify-center p-2 md:p-8 md:max-h-[50vh] xl:max-h-full ">
             <AppearInside>
               <Image
                 src={img}
                 alt={title}
                 fill
                 style={{
-                  objectFit: "cover",
-                  borderRadius: "20px",
-                  padding: "10px",
+                  objectFit: "contain",
                 }}
               />
             </AppearInside>
           </div>
-          <div className="col-span-5 lg:col-span-2 flex lg:flex-col justify-center gap-20 items-center h-full">
-            <a>{links.github}</a>
-            <a>{links.vercel}</a>
-          </div>
-          <div className="col-span-5 p-10">{description}</div>
-          <div className="col-span-5 w-full flex justify-center items-center gap-12 grow">
+          <div className="col-span-2 flex xl:flex-col justify-center items-center">
             {techs.length
               ? techs.map((icon, index) => {
                   return (
@@ -53,6 +46,15 @@ const Project = ({
                   );
                 })
               : ""}
+          </div>
+          <div className="col-span-5 px-10 py-4">{description}</div>
+          <div className="col-span-5 flex justify-center gap-20 items-center p-5">
+            <a href={links.github} className="text-blue-600">
+              View code
+            </a>
+            <a href={links.vercel} className="text-blue-600">
+              View site
+            </a>
           </div>
         </div>
         {/* <div className="flex flex-col h-full">

@@ -15,7 +15,7 @@ export default function Home() {
   const mobile = useMediaQuery();
   const { locale } = useRouter();
 
-  const iconSize = mobile ? 64 : 128;
+  const iconSize = mobile ? 80 : 110;
 
   const lang = locale as "en" | "ru";
 
@@ -72,10 +72,16 @@ export default function Home() {
             <Logos.Next size={iconSize} />,
             <Logos.ReactIcon size={iconSize} />,
             <Logos.Tailwind size={iconSize} />,
+            <Logos.Typescript size={iconSize} />,
           ]}
         />
-        <Project />
-        <Project />
+        <Project techs={[<Logos.Typescript size={iconSize} />]} />
+        <Project
+          techs={[
+            <Logos.Typescript size={iconSize} />,
+            <Logos.Tailwind size={iconSize} />,
+          ]}
+        />
       </div>
       <Contacts reference={contactsRef} />
     </>

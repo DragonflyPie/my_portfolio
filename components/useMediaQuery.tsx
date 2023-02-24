@@ -4,8 +4,13 @@ const useMediaQuery = () => {
   const [mobile, setMobile] = useState(true);
 
   useEffect(() => {
+    const media = window.matchMedia("(max-width: 767px)");
+    if (media.matches !== mobile) {
+      setMobile(media.matches);
+    }
+
     const listener = () => {
-      setMobile(window.matchMedia("(max-width: 767px)").matches);
+      setMobile(media.matches);
     };
 
     window.addEventListener("resize", listener);

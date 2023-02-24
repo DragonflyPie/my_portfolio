@@ -86,7 +86,7 @@ const TopBar = ({
           </a>
         )}
       </div>
-      <div className="flex justify-around grow md:grow-0 px-5  md:justify-end md:gap-10">
+      <div className="flex justify-around grow md:grow-0 px-5 md:px-10 md:justify-end md:gap-10">
         <a
           className="cursor-pointer hover:drop-shadow-dark dark:hover:drop-shadow-light duration-300"
           onClick={() => onClick(projectsRef)}
@@ -105,11 +105,11 @@ const TopBar = ({
         <button onClick={toggleTheme} className="">
           {theme === "dark" ? (
             <MdOutlineLightMode
-              size={24}
+              size={20}
               className="hover:animate-spin-slow "
             />
           ) : (
-            <MdDarkMode size={24} className="hover:animate-wiggle" />
+            <MdDarkMode size={20} className="hover:animate-wiggle" />
           )}
         </button>
         <div
