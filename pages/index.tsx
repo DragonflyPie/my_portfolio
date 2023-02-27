@@ -15,7 +15,7 @@ export default function Home() {
   const mobile = useMediaQuery();
   const { locale } = useRouter();
 
-  const iconSize = mobile ? 80 : 110;
+  const iconSize = mobile ? 80 : 80;
 
   const lang = locale as "en" | "ru";
 

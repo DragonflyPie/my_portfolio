@@ -21,22 +21,23 @@ const Project = ({
   links = { vercel: "www.vercel.com", github: "www.github.com" },
 }: ProjectProps) => {
   return (
-    <div className="flex flex-col h-screen p-4 lg:p-6">
-      <div className="w-full h-full bg-slate-300 rounded-xl p-5">
-        <div className="flex flex-col justify-between xl:grid xl:grid-cols-5 h-full max-h-full xl:grid-rows-[4fr_2fr_1fr]">
-          <div className="col-span-5 xl:col-span-3 flex flex-col justify-center p-2 md:p-8 md:max-h-[50vh] xl:max-h-full ">
-            <AppearInside>
-              <Image
-                src={img}
-                alt={title}
-                fill
-                style={{
-                  objectFit: "contain",
-                }}
-              />
-            </AppearInside>
+    <div className="flex h-screen flex-col p-4 lg:p-6">
+      <div className="h-full w-full rounded-xl bg-slate-300 p-5 ">
+        <div className="flex h-full flex-col justify-between lg:grid lg:grid-cols-4 2xl:grid-cols-3 ">
+          <div className="relative  aspect-video max-h-[70vh] md:p-8 lg:col-span-3 2xl:col-span-2">
+            {/* <div className="relative aspect-video h-full w-full"> */}
+            <Image
+              src={img}
+              alt={title}
+              fill
+              style={{ borderRadius: "10px" }}
+            />
+            {/* </div> */}
           </div>
-          <div className="col-span-2 flex xl:flex-col justify-center items-center">
+          <div className="lg:col-span-4 2xl:col-span-1 2xl:col-start-3 2xl:row-start-1 2xl:px-5">
+            <AppearInside>{description}</AppearInside>
+          </div>
+          <div className="row-start-2 flex items-center justify-center gap-1 md:gap-5 md:pl-5 lg:col-start-4 lg:row-start-1 lg:flex-col lg:justify-start 2xl:col-span-3 2xl:col-start-1 2xl:row-start-2 2xl:flex-row 2xl:justify-center 2xl:pl-0">
             {techs.length
               ? techs.map((icon, index) => {
                   return (
@@ -47,8 +48,8 @@ const Project = ({
                 })
               : ""}
           </div>
-          <div className="col-span-5 px-10 py-4">{description}</div>
-          <div className="col-span-5 flex justify-center gap-20 items-center p-5">
+
+          <div className="flex items-center justify-center gap-20 p-5 lg:col-span-4">
             <a href={links.github} className="text-blue-600">
               View code
             </a>
