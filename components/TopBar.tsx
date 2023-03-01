@@ -61,9 +61,9 @@ const TopBar = ({
   }
 
   return (
-    <nav className="flex justify-between md:justify-end font-navbar backdrop-blur-sm bg-opacity-20 bg-slate-200 dark:bg-slate-600 dark:bg-opacity-50 content-center fixed w-screen lg:rounded-b-2xl py-2 px-5 md:px-6 z-10">
+    <nav className="fixed z-10 flex w-screen content-center justify-between bg-slate-200 bg-opacity-20 py-2 px-5 font-navbar backdrop-blur-sm dark:bg-slate-600 dark:bg-opacity-50 md:justify-end md:px-6 lg:rounded-b-2xl">
       {/* <nav className="flex justify-between font-navbar backdrop-blur-sm bg-opacity-60 bg-slate-200 dark:bg-slate-600 dark:bg-opacity-50 md:justify-end md:gap-10 content-center fixed w-screen   lg:rounded-b-2xl py-2 px-5 z-10"> */}
-      <div className="cursor-pointer flex items-center">
+      <div className="flex cursor-pointer items-center">
         {!onTop ? (
           <a
             className="opacity-1 duration-500"
@@ -86,16 +86,16 @@ const TopBar = ({
           </a>
         )}
       </div>
-      <div className="flex justify-around grow md:grow-0 px-5 md:px-10 md:justify-end md:gap-10">
+      <div className="flex grow justify-around px-5 md:grow-0 md:justify-end md:gap-10 md:px-10">
         <a
-          className="cursor-pointer hover:drop-shadow-dark dark:hover:drop-shadow-light duration-300"
+          className="cursor-pointer duration-300 hover:drop-shadow-dark dark:hover:drop-shadow-light"
           onClick={() => onClick(projectsRef)}
         >
           {strings.projects[lang].toUpperCase()}
         </a>
 
         <a
-          className="cursor-pointer hover:drop-shadow-dark dark:hover:drop-shadow-light duration-300"
+          className="cursor-pointer duration-300 hover:drop-shadow-dark dark:hover:drop-shadow-light"
           onClick={() => onClick(contactsRef)}
         >
           {strings.contacts[lang].toUpperCase()}
@@ -113,25 +113,25 @@ const TopBar = ({
           )}
         </button>
         <div
-          className="flex flex-col content-center items-center justify-center relative"
+          className="relative flex flex-col content-center items-center justify-center"
           // className="flex flex-col content-center items-center justify-center relative"
           ref={ref}
         >
           <button
             onClick={handleOpen}
-            className="flex justify-center gap-1 items-center hover:drop-shadow-dark dark:hover:drop-shadow-light duration-300"
+            className="flex items-center justify-center gap-1 duration-300 hover:drop-shadow-dark dark:hover:drop-shadow-light"
           >
             {locale?.toLocaleUpperCase()}
             <MdOutlineKeyboardArrowDown />
           </button>
           {open ? (
-            <ul className="absolute top-6 right-1 bg-slate-400 content-center items-center flex flex-col gap-3 p-2 rounded">
-              <li className="p-0 m-0 flex">
+            <ul className="absolute top-6 right-1 flex flex-col content-center items-center gap-3 rounded bg-slate-400 p-2">
+              <li className="m-0 flex p-0">
                 <button onClick={() => handleClickFlag("en")}>
                   <Flag country={"en"}></Flag>
                 </button>
               </li>
-              <li className="p-0 m-0 flex">
+              <li className="m-0 flex p-0">
                 <button onClick={() => handleClickFlag("ru")}>
                   <Flag country={"ru"}></Flag>
                 </button>

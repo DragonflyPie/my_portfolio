@@ -1,9 +1,14 @@
 import Head from "next/head";
 import React from "react";
-import { Caveat } from "@next/font/google";
+import { Rubik, Montserrat } from "@next/font/google";
 
-const caveat = Caveat({
-  variable: "--caveat-font",
+const rubik = Rubik({
+  variable: "--rubik-font",
+  subsets: ["cyrillic", "latin"],
+});
+
+const montserrat = Montserrat({
+  variable: "--montserrat-font",
   subsets: ["cyrillic", "latin"],
 });
 
@@ -19,7 +24,7 @@ const Layout = ({ children }: LayoutProps) => {
       </Head>
       <div className="h-screen">
         <main
-          className={`${caveat.variable} flex flex-col overflow-x-hidden scroll-smooth `}
+          className={`${rubik.variable} ${montserrat.variable} flex flex-col overflow-x-hidden scroll-smooth `}
         >
           {children}
         </main>

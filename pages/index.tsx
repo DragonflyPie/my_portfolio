@@ -15,7 +15,7 @@ export default function Home() {
   const mobile = useMediaQuery();
   const { locale } = useRouter();
 
-  const iconSize = mobile ? 80 : 80;
+  const iconSize = mobile ? 24 : 36;
 
   const lang = locale as "en" | "ru";
 
@@ -79,6 +79,7 @@ export default function Home() {
         <Project
           techs={[
             <Logos.Typescript size={iconSize} />,
+            <Logos.Sass size={iconSize} />,
             <Logos.Tailwind size={iconSize} />,
           ]}
         />

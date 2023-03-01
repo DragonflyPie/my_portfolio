@@ -9,8 +9,8 @@ module.exports = {
     extend: {
       fontFamily: {
         heading: ["var(--font-inter)"],
-        navbar: ["var(--caveat-font)"],
-        main: ["var(--lobsta-kek)"],
+        navbar: ["var(--rubik-font)"],
+        main: ["var(--montserrat-font)"],
       },
       keyframes: {
         // "slide-left": {
