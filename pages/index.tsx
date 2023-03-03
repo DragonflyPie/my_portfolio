@@ -12,10 +12,11 @@ export default function Home() {
   const welcomeRef = useRef<HTMLDivElement>(null);
   const contactsRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
-  const mobile = useMediaQuery();
+  const mobile = useMediaQuery(767);
+  const medium = useMediaQuery(1023);
   const { locale } = useRouter();
 
-  const iconSize = mobile ? 24 : 36;
+  const iconSize = mobile ? 20 : medium ? 24 : 30;
 
   const lang = locale as "en" | "ru";
 

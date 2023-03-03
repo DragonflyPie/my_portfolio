@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
-const useMediaQuery = () => {
+const useMediaQuery = (query: number) => {
   const [mobile, setMobile] = useState(true);
 
   useEffect(() => {
-    const media = window.matchMedia("(max-width: 767px)");
+    const media = window.matchMedia(`(max-width: ${query}px)`);
     if (media.matches !== mobile) {
       setMobile(media.matches);
     }
@@ -18,7 +18,7 @@ const useMediaQuery = () => {
     return () => {
       window.removeEventListener("resize", listener);
     };
-  }, [mobile]);
+  }, [mobile, query]);
 
   return mobile;
 };
