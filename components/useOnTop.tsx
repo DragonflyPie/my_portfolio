@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const useScrolledToTop = () => {
+const useOnTop = () => {
   const [onTop, setOnTop] = useState(true);
 
   const isBrowser = typeof window !== `undefined`;
@@ -21,4 +21,4 @@ const useScrolledToTop = () => {
   return onTop;
 };
 
-export default useScrolledToTop;
+export default useOnTop;

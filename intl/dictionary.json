@@ -1,0 +1,80 @@
+{
+  "menu": {
+    "about": {
+      "en": "About",
+      "ru": "Обо мне"
+    },
+    "projects": {
+      "en": "Projects",
+      "ru": "Проекты"
+    },
+    "contacts": {
+      "en": "Contacts",
+      "ru": "Контакты"
+    }
+  },
+  "main": {
+    "heading": {
+      "en": "Hi! I'm Vladimir, web developer.",
+      "ru": "Привет"
+    },
+    "content": [
+      {
+        "en": "My passion lies in creating clean and thoughtful design, ensuring user's smooth and memorable experience.",
+        "ru": "Привет"
+      },
+      {
+        "en": "I firmly believe that rigid and maintainable code forms the necessary foundation of any project. As a lifelong learner, I always strive to stay updated with the latest web development technologies.",
+        "ru": "Привет"
+      },
+      {
+        "en": "I specialize in development using JavaScript, React, Next.js, and TypeScript. I am always eager to take on new challenges and expand my skill set. Here is my current tech stack.",
+        "ru": "Привет"
+      },
+      {
+        "en": "With a strong focus on clean design, responsiveness, and thoughtful user interactions, I am dedicated to delivering high-quality web solutions. I pay meticulous attention to detail, crafting every piece of the user interface with precision, ensuring that users can experience a smooth and memorable journey. ",
+        "ru": "Привет"
+      },
+      {
+        "en": "I firmly believe that rigid, maintainable, and readable code forms the necessary foundation of any project. As a lifelong learner, I always strive to stay updated with the latest web development technologies.",
+        "ru": "Привет"
+      },
+      {
+        "en": "I specialize in development using JavaScript, React, Next.js, and TypeScript. While my main area of expertise lies in front-end development, I also have experience in full-stack web development with technologies such as Node.js, Next.js, and Python Django. I am always eager to take on new challenges and expand my skill set. Here is my current tech stack.",
+        "ru": "Привет"
+      }
+    ]
+  },
+  "footer": {
+    "en": "Hello",
+    "ru": "Привет"
+  },
+  "chatGPT": [
+    {
+      "en": "Hello",
+      "ru": "Привет"
+    },
+    {
+      "en": "Hello",
+      "ru": "Привет"
+    },
+    {
+      "en": "Hello",
+      "ru": "Привет"
+    }
+  ],
+  "timeJourney": [
+    {
+      "en": "Hello",
+      "ru": "Привет"
+    },
+    {
+      "en": "Hello",
+      "ru": "Привет"
+    },
+    {
+      "en": "Hello",
+      "ru": "Привет"
+    }
+  ]
+}

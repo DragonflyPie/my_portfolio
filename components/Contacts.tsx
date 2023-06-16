@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "./Footer";
+import ContactForm from "./ContactForm";
 
 interface ContactsRef {
   reference: React.Ref<HTMLDivElement>;
@@ -8,10 +9,10 @@ interface ContactsRef {
 const Contacts = ({ reference }: ContactsRef) => {
   return (
     <div
-      className="flex flex-col justify-between snap-center h-screen "
+      className="flex h-screen w-full snap-center scroll-m-6 flex-col justify-between pt-10"
       ref={reference}
     >
-      <div className="">Contactssdsfsd</div>
+      <ContactForm />
       <Footer />
     </div>
   );

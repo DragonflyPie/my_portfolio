@@ -3,9 +3,10 @@ import useElementOnScreen from "./useElementOnScreen";
 
 interface AnimateProps extends React.PropsWithChildren {
   index: number;
+  title: string;
 }
 
-const AnimateInside = ({ children, index }: AnimateProps) => {
+const AnimateInside = ({ children, index, title }: AnimateProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const onScreen = useElementOnScreen(ref);
 
@@ -14,11 +15,14 @@ const AnimateInside = ({ children, index }: AnimateProps) => {
   return (
     <div
       ref={ref}
-      className={
-        onScreen
-          ? "opacity-1 blur-0 translate-x-0 ease-[cubic-bezier(.78,.34,.49,1.25)] duration-700"
-          : "opacity-0 blur-sm translate-x-[100%]"
-      }
+      title={title}
+      className={`relative h-10 w-10 rounded-sm border border-gray-800 bg-white p-1 shadow-sm dark:border-white dark:bg-black md:h-12 md:w-12 md:p-2 lg:h-14 lg:w-14 lg:p-3
+      
+        ${
+          onScreen
+            ? "opacity-1 translate-x-0 blur-0 duration-700 ease-[cubic-bezier(.78,.34,.49,1.25)]"
+            : "translate-x-[100%] opacity-0 blur-sm"
+        }`}
       style={
         onScreen
           ? {

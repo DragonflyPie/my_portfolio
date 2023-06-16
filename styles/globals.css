@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  .clip-trapezoid {
+    clip-path: polygon(0% 100%, 17.5% 0%, 82.5% 0%, 100% 100%);
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -9,22 +15,9 @@
 body,
 html {
   margin: 0;
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
 }
 
 #__next {
   min-height: 100vh;
 }
-
-/* .con {
-  scroll-snap-type: y mandatory;
-  scroll-snap-type: mandatory;
-  overflow-y: scroll;
-  height: 100vh;
-}
-
-.kek {
-  scroll-snap-align: start;
-  height: 100vh;
-  flex-shrink: 0;
-} */

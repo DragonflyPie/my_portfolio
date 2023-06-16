@@ -1,23 +1,28 @@
 import React, { useRef } from "react";
 import Contacts from "../components/Contacts";
 import Project from "../components/Project";
-import TopBar from "../components/TopBar";
+import NavBar from "../components/NavBar";
+import ScrollDownIndicator from "../components/ScrollDownIndicator";
+import {
+  CloudinaryIcon,
+  FirebaseIcon,
+  GoogleMapsIcon,
+  MongoDBIcon,
+  NextIcon,
+  ReactIcon,
+  ReduxIcon,
+  TailwindIcon,
+  TypescriptIcon,
+} from "../components/StackIcons";
+import FrontPage from "../components/FrontPage";
 import { useRouter } from "next/router";
-import strings from "../intl/stringsDic.json";
-import ScrollAnimation from "../components/ScrollAnimation";
-import Logos from "../components/Icons";
-import useMediaQuery from "../components/useMediaQuery";
+import Head from "next/head";
 
 export default function Home() {
-  const welcomeRef = useRef<HTMLDivElement>(null);
   const contactsRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
-  const mobile = useMediaQuery(767);
-  const medium = useMediaQuery(1023);
+
   const { locale } = useRouter();
-
-  const iconSize = mobile ? 20 : medium ? 24 : 30;
-
   const lang = locale as "en" | "ru";
 
   const handleClick = (elementRef: React.RefObject<HTMLDivElement> | null) => {
@@ -27,65 +32,56 @@ export default function Home() {
   };
 
   return (
-    <>
-      <TopBar
-        onClick={handleClick}
-        welcomeRef={welcomeRef}
+    <div>
+      <Head>
+        <title>Vladimir Karasev 👋</title>
+      </Head>
+      <NavBar
+        handleClick={handleClick}
         contactsRef={contactsRef}
         projectsRef={projectsRef}
       />
-      <div className="h-screen p-12" ref={welcomeRef}>
-        <h1>{strings.heading[lang]}</h1>
-        <section className="">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque cum
-          culpa, fugiat ex, quis quod eveniet facere delectus totam odit ad.
-          Quibusdam recusandae similique nisi omnis libero sunt ea? Quod. Lorem,
-          ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-          exercitationem quas ipsam laborum neque voluptatibus repellendus totam
-          ipsa, dignissimos velit quia aut quisquam labore. Repellat doloremque
-          atque dicta nemo ducimus.
-        </section>
-        <section>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque cum
-          culpa, fugiat ex, quis quod eveniet facere delectus totam odit ad.
-          Quibusdam recusandae similique nisi omnis libero sunt ea? Quod. Lorem,
-          ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-          exercitationem quas ipsam laborum neque voluptatibus repellendus totam
-          ipsa, dignissimos velit quia aut quisquam labore. Repellat doloremque
-          atque dicta nemo ducimus.
-        </section>
-        <section>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque cum
-          culpa, fugiat ex, quis quod eveniet facere delectus totam odit ad.
-          Quibusdam recusandae similique nisi omnis libero sunt ea? Quod. Lorem,
-          ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-          exercitationem quas ipsam laborum neque voluptatibus repellendus totam
-          ipsa, dignissimos velit quia aut quisquam labore. Repellat doloremque
-          atque dicta nemo ducimus.
-        </section>
+      <div className="flex flex-col items-center space-y-4 overflow-hidden">
+        <FrontPage />
+        <div
+          className="absolute bottom-5 left-1/2 cursor-pointer"
+          onClick={() => handleClick(projectsRef)}
+        >
+          <ScrollDownIndicator />
+        </div>
+        <div ref={projectsRef} className="w-full scroll-m-10 space-y-4 px-4 ">
+          <Project
+            lang={lang}
+            img="/chatGPT.png"
+            techIcons={[
+              { icon: <ReactIcon />, name: "ReactJS" },
+              { icon: <NextIcon />, name: "NextJS" },
+              { icon: <TypescriptIcon />, name: "Typescript" },
+              { icon: <TailwindIcon />, name: "Tailwind" },
+              { icon: <FirebaseIcon />, name: "Firebase" },
+            ]}
+            title={""}
+            description={"chatGPT"}
+          />
+          <Project
+            lang={lang}
+            img="/timeJourney.png"
+            techIcons={[
+              { icon: <ReactIcon />, name: "ReactJS" },
+              { icon: <NextIcon />, name: "NextJS" },
+              { icon: <TypescriptIcon />, name: "Typescript" },
+              { icon: <ReduxIcon />, name: "Redux" },
+              { icon: <TailwindIcon />, name: "Tailwind" },
+              { icon: <MongoDBIcon />, name: "MongoDB" },
+              { icon: <CloudinaryIcon />, name: "Cloudinary" },
+              { icon: <GoogleMapsIcon />, name: "GoogleMaps" },
+            ]}
+            title={""}
+            description={"chatGPT"}
+          />
+        </div>
+        <Contacts reference={contactsRef} />
       </div>
-
-      <ScrollAnimation />
-
-      <div ref={projectsRef}>
-        <Project
-          techs={[
-            <Logos.Next size={iconSize} />,
-            <Logos.ReactIcon size={iconSize} />,
-            <Logos.Tailwind size={iconSize} />,
-            <Logos.Typescript size={iconSize} />,
-          ]}
-        />
-        <Project techs={[<Logos.Typescript size={iconSize} />]} />
-        <Project
-          techs={[
-            <Logos.Typescript size={iconSize} />,
-            <Logos.Sass size={iconSize} />,
-            <Logos.Tailwind size={iconSize} />,
-          ]}
-        />
-      </div>
-      <Contacts reference={contactsRef} />
-    </>
+    </div>
   );
 }

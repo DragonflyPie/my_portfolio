@@ -8,7 +8,7 @@ const AppearInside = ({ children }: React.PropsWithChildren) => {
   return (
     <div
       ref={ref}
-      className={onScreen ? "opacity-1 duration-1000" : "opacity-0 blur-sm"}
+      className={onScreen ? "opacity-1 duration-500" : "opacity-0 blur-sm"}
     >
       {children}
     </div>
