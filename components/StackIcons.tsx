@@ -173,6 +173,76 @@ function FirebaseIcon() {
   );
 }
 
+function DjangoIcon() {
+  return (
+    <div className="h-full w-full text-black dark:text-white">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="100%"
+        height="100%"
+        fill="none"
+        viewBox="0 0 79 101"
+      >
+        <path
+          fill="#2BA977"
+          d="M35.384.396h16.342v74.898c-8.37 1.583-14.533 2.206-21.2 2.206C10.568 77.48.178 68.562.178 51.437c0-16.5 11.02-27.208 28.098-27.208 2.65 0 4.669.209 7.108.833V.396zm.573 38.164c-1.914-.625-3.491-.834-5.51-.834-8.265 0-13.04 5.042-13.04 13.877 0 8.603 4.565 13.352 12.935 13.352 1.808 0 3.28-.101 5.615-.414V38.56z"
+        ></path>
+        <path
+          fill="#2BA977"
+          d="M78.449 26.24v37.5c0 12.915-.968 19.125-3.807 24.48-2.65 5.147-6.141 8.393-13.355 11.978l-15.163-7.145c7.213-3.353 10.704-6.315 12.934-10.836 2.334-4.623 3.07-9.977 3.07-24.06V26.24h16.32zM60.48.396h16.342V17H60.48V.396z"
+        ></path>
+      </svg>
+    </div>
+  );
+}
+
+function PythonIcon() {
+  return (
+    <div className="h-full w-full text-black dark:text-white">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="100%"
+        height="100%"
+        fill="none"
+        viewBox="0 0 101 100"
+      >
+        <path
+          fill="url(#paint0_linear_25_461)"
+          d="M50.468.151c-25.386 0-23.801 11.01-23.801 11.01l.028 11.405h24.226v3.424H17.073S.828 24.148.828 49.762c0 25.615 14.18 24.707 14.18 24.707h8.46V62.583s-.455-14.18 13.953-14.18H61.45s13.5.219 13.5-13.046V13.425S76.998.15 50.468.15zM37.11 7.821a4.355 4.355 0 014.358 4.358 4.355 4.355 0 01-6.026 4.028 4.354 4.354 0 01-2.69-4.028 4.355 4.355 0 014.358-4.358z"
+        ></path>
+        <path
+          fill="url(#paint1_linear_25_461)"
+          d="M51.19 99.631c25.385 0 23.8-11.009 23.8-11.009l-.028-11.405H50.736v-3.424h33.848s16.244 1.842 16.244-23.773S86.65 25.313 86.65 25.313h-8.462V37.2s.456 14.179-13.953 14.179H40.208s-13.5-.218-13.5 13.047v21.933s-2.05 13.273 24.48 13.273h.001zm13.357-7.67a4.355 4.355 0 01-4.027-6.026 4.353 4.353 0 014.027-2.69 4.355 4.355 0 014.028 6.027 4.356 4.356 0 01-4.028 2.69z"
+        ></path>
+        <defs>
+          <linearGradient
+            id="paint0_linear_25_461"
+            x1="10.438"
+            x2="59.995"
+            y1="9.099"
+            y2="58.161"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#387EB8"></stop>
+            <stop offset="1" stopColor="#366994"></stop>
+          </linearGradient>
+          <linearGradient
+            id="paint1_linear_25_461"
+            x1="40.856"
+            x2="94.075"
+            y1="40.604"
+            y2="90.913"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#FFE052"></stop>
+            <stop offset="1" stopColor="#FFC331"></stop>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  );
+}
+
 function NodeJSIcon() {
   return (
     <div className="h-full w-full text-black dark:text-white">
@@ -319,4 +389,6 @@ export {
   GoogleMapsIcon,
   JavascriptIcon,
   NodeJSIcon,
+  PythonIcon,
+  DjangoIcon,
 };

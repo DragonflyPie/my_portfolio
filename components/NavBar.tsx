@@ -1,14 +1,12 @@
 import { useTheme } from "next-themes";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import { MdDarkMode } from "react-icons/md";
-import { MdOutlineLightMode } from "react-icons/md";
 import dictionary from "../intl/dictionary.json";
 import { RxDoubleArrowUp } from "react-icons/rx";
 import useOnTop from "./useOnTop";
 import NavLink from "./NavLink";
 import LocaleMenu from "./LocaleMenu";
-import { MoonIcon } from "./Icons";
+import { MoonIcon, SunIcon } from "./Icons";
 
 interface TopBarProps {
   handleClick: (elementRef: React.RefObject<HTMLDivElement>) => void;
@@ -74,15 +72,13 @@ const NavBar = ({ handleClick, contactsRef, projectsRef }: TopBarProps) => {
         />
       </div>
       <div className="flex gap-5">
-        <button onClick={toggleTheme} className="">
+        <button onClick={toggleTheme} className="h-6 w-6">
           {theme === "dark" ? (
-            <MdOutlineLightMode
-              size={20}
-              className="duration-[2s] ease-in-out hover:rotate-180 "
-            />
+            <div className="duration-[2s] hover:rotate-180">
+              <SunIcon />
+            </div>
           ) : (
-            // <MdDarkMode size={20} className="hover:animate-wiggle" />
-            <div className="duration-500 hover:rotate-12">
+            <div className="">
               <MoonIcon />
             </div>
           )}

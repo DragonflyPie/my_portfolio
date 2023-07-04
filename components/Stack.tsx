@@ -1,7 +1,9 @@
 import {
+  DjangoIcon,
   JavascriptIcon,
   NextIcon,
   NodeJSIcon,
+  PythonIcon,
   ReactIcon,
   ReduxIcon,
   SassIcon,
@@ -18,15 +20,21 @@ const Stack = () => {
           <NextIcon />
         </IconWrapper>
       </div>
-      <div className="-mt-px flex justify-center gap-1 pl-4">
+      <div className="-mt-px flex items-end justify-center gap-1 pl-4">
+        <IconWrapper size="sm" title="Tailwind">
+          <TailwindIcon />
+        </IconWrapper>
         <IconWrapper title="Typescript">
           <TypescriptIcon />
         </IconWrapper>
         <IconWrapper title="Redux">
           <ReduxIcon />
         </IconWrapper>
+        <IconWrapper size="sm" title="Sass">
+          <SassIcon />
+        </IconWrapper>
       </div>
-      <div className=" -mb-px -mt-px flex items-end justify-center gap-3">
+      <div className=" -mb-px -mt-px flex items-end justify-center gap-px">
         <IconWrapper title="NodeJS">
           <NodeJSIcon />
         </IconWrapper>
@@ -36,14 +44,14 @@ const Stack = () => {
         <IconWrapper size="lg" title="React">
           <ReactIcon />
         </IconWrapper>
-        <div className="relative flex flex-col -space-y-px">
+        <div className="relative flex flex-col -space-y-px pl-4 ">
           <div className="absolute bottom-full right-2">
-            <IconWrapper size="sm" title="Tailwind">
-              <TailwindIcon />
+            <IconWrapper size="sm" title="Django">
+              <DjangoIcon />
             </IconWrapper>
           </div>
-          <IconWrapper size="sm" title="Sass">
-            <SassIcon />
+          <IconWrapper size="sm" title="Python">
+            <PythonIcon />
           </IconWrapper>
         </div>
       </div>
