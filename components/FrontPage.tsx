@@ -4,6 +4,7 @@ import Stack from "./Stack";
 import Lightbulb from "./Lightbulb";
 import Cogs from "./Cogs";
 import Moth from "./Moth";
+import Switch from "./Switch";
 
 const FrontPage = () => {
   const { locale } = useRouter();
@@ -15,6 +16,10 @@ const FrontPage = () => {
       </h1>
       <div className="flex flex-col items-center md:flex-row md:gap-10">
         <Lightbulb />
+        <section>{dictionary.main.content[0][lang]}</section>
+      </div>
+      <div className="flex flex-col items-center md:flex-row md:gap-10">
+        <Switch />
         <section>{dictionary.main.content[0][lang]}</section>
       </div>
       <div className="flex w-full flex-col items-center md:flex-row md:gap-10  ">

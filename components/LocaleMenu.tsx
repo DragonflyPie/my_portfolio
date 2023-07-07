@@ -30,13 +30,13 @@ const LocaleMenu = () => {
     >
       <button
         onClick={handleOpen}
-        className="flex items-center justify-center gap-1 duration-300 hover:drop-shadow-dark dark:hover:drop-shadow-light"
+        className="flex items-center justify-center gap-1 hover:drop-shadow-dark dark:hover:drop-shadow-light"
       >
         {locale?.toLocaleUpperCase()}
         <MdOutlineKeyboardArrowDown />
       </button>
       {open ? (
-        <ul className="absolute right-1 top-6 space-y-2 rounded-sm border border-black bg-blue-50 p-2">
+        <ul className="absolute right-1 top-6 space-y-2 rounded-sm border border-black  bg-gray-400 p-2 duration-500">
           <li className="flex">
             <button onClick={() => handleClickFlag("en")} className="">
               <EnFlag />

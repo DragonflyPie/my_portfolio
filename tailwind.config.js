@@ -120,12 +120,19 @@ module.exports = {
             opacity: 0.2,
           },
         },
+        dash: {
+          "0% ": {},
+          "20%, 100%": {
+            transform: "translateX(-120%) rotate(-45deg)",
+          },
+        },
       },
       dropShadow: {
         dark: "0 1px 1px rgba(0, 0, 0, 0.25)",
         light: "0 1px 2px rgba(255, 255, 255, 0.25)",
       },
       animation: {
+        dash: "dash 7s linear infinite",
         "spin-slow": "spin 10s linear infinite",
         "spin-reverse": "reverse-spin linear 10s infinite",
         wiggle: "wiggle 1s ease-in infinite",

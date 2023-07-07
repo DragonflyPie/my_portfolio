@@ -1,6 +1,6 @@
 const Cogs = () => {
   return (
-    <div className="min-w-[56px] scale-50 md:scale-100">
+    <div className="min-w-[56px] scale-75 md:scale-100">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

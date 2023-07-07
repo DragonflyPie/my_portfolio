@@ -1,4 +1,3 @@
-import { useTheme } from "next-themes";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import dictionary from "../intl/dictionary.json";
@@ -17,7 +16,6 @@ interface TopBarProps {
 const NavBar = ({ handleClick, contactsRef, projectsRef }: TopBarProps) => {
   const [mounted, setMounted] = useState(false);
 
-  const { theme, setTheme } = useTheme();
   const router = useRouter();
   const { locale } = router;
 
@@ -30,8 +28,6 @@ const NavBar = ({ handleClick, contactsRef, projectsRef }: TopBarProps) => {
   };
 
   const lang = locale as "en" | "ru";
-
-  const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
 
   useEffect(() => {
     setMounted(true);
@@ -71,20 +67,7 @@ const NavBar = ({ handleClick, contactsRef, projectsRef }: TopBarProps) => {
           sectionRef={contactsRef}
         />
       </div>
-      <div className="flex gap-5">
-        <button onClick={toggleTheme} className="h-6 w-6">
-          {theme === "dark" ? (
-            <div className="duration-[2s] hover:rotate-180">
-              <SunIcon />
-            </div>
-          ) : (
-            <div className="">
-              <MoonIcon />
-            </div>
-          )}
-        </button>
-        <LocaleMenu />
-      </div>
+      <LocaleMenu />
     </nav>
   );
 };
