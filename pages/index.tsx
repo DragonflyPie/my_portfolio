@@ -62,6 +62,8 @@ export default function Home() {
             ]}
             title={""}
             description={"chatGPT"}
+            github="https://github.com/"
+            url="https://vercel.com/"
           />
           <Project
             lang={lang}
@@ -78,6 +80,8 @@ export default function Home() {
             ]}
             title={""}
             description={"chatGPT"}
+            github="https://github.com/"
+            url="https://vercel.com/"
           />
         </div>
         <Contacts reference={contactsRef} />

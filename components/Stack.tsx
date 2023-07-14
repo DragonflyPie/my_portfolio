@@ -20,7 +20,7 @@ const Stack = () => {
           <NextIcon />
         </IconWrapper>
       </div>
-      <div className="-mt-px flex items-end justify-center gap-1 pl-4">
+      <div className="-mt-px flex items-end justify-center gap-1 pl-2">
         <IconWrapper size="sm" title="Tailwind">
           <TailwindIcon />
         </IconWrapper>
@@ -44,7 +44,7 @@ const Stack = () => {
         <IconWrapper size="lg" title="React">
           <ReactIcon />
         </IconWrapper>
-        <div className="relative flex flex-col -space-y-px pl-4 ">
+        <div className="relative flex flex-col -space-y-px pl-3 ">
           <div className="absolute bottom-full right-2">
             <IconWrapper size="sm" title="Django">
               <DjangoIcon />

@@ -6,7 +6,7 @@ interface CubeProps {
 const Cube = ({ icon, size }: CubeProps) => {
   return (
     <div
-      className="h-[50px] w-[50px] animate-walk-right"
+      className="animate-walk-right h-[50px] w-[50px]"
       style={{
         perspective: "100px",
       }}

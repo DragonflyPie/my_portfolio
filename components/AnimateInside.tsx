@@ -16,7 +16,7 @@ const AnimateInside = ({ children, index, title }: AnimateProps) => {
     <div
       ref={ref}
       title={title}
-      className={`relative h-10 w-10 rounded-sm border border-gray-800 bg-white p-1 shadow-sm dark:border-white dark:bg-black md:h-12 md:w-12 md:p-2 lg:h-14 lg:w-14 lg:p-3
+      className={`relative h-10 w-10 rounded-sm border border-gray-800 bg-white p-1 text-white shadow-sm dark:border-white dark:bg-blackish dark:text-black md:h-12 md:w-12 md:p-2 lg:h-14 lg:w-14 lg:p-3
       
         ${
           onScreen

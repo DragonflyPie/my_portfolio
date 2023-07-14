@@ -63,7 +63,7 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit(postMail)}
-      className="flex h-full flex-col items-center gap-5 bg-slate-100 p-3 md:p-5"
+      className="flex h-full flex-col items-center gap-5 p-3 md:p-5"
     >
       {emailState === "error" ? (
         <h1>SOSISKA</h1>

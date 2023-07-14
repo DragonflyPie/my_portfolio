@@ -9,7 +9,7 @@ interface IconWrapperProps {
 const IconWrapper = ({ children, title, size = "md" }: IconWrapperProps) => {
   return (
     <div
-      className={`rounded-sm border border-gray-800 bg-white p-1 text-white dark:border-white dark:bg-black dark:text-black md:p-2 ${
+      className={`rounded-sm border border-gray-800  p-1 text-white dark:border-white dark:bg-blackish dark:text-black md:p-2 ${
         size === "sm"
           ? "h-8 w-8 md:h-12 md:w-12"
           : size === "lg"

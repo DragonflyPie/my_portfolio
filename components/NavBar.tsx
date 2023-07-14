@@ -38,7 +38,7 @@ const NavBar = ({ handleClick, contactsRef, projectsRef }: TopBarProps) => {
   }
 
   return (
-    <nav className=" fixed z-10 flex w-screen content-center justify-between bg-white bg-opacity-20 px-5 py-2 font-navbar backdrop-blur-sm dark:bg-black dark:bg-opacity-50 md:justify-end md:px-6 ">
+    <nav className=" fixed z-10 flex w-screen content-center justify-between bg-white bg-opacity-20 px-5 py-2 font-navbar backdrop-blur-sm dark:bg-blackish dark:bg-opacity-50 md:justify-end md:px-6 ">
       <div className="flex cursor-pointer items-center">
         <a
           className={

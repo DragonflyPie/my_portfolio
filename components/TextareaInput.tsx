@@ -32,7 +32,7 @@ const TextareaInput = ({ register, errors, id, label }: InputProps) => {
         id={id}
         rows={6}
         // ref={textareaRef}
-        className={` w-full rounded-md  border-transparent bg-white p-4 font-light outline-none disabled:cursor-not-allowed disabled:opacity-70 
+        className={` w-full rounded-md border border-gray-200 border-transparent bg-white  p-4 font-light outline-none disabled:cursor-not-allowed disabled:opacity-70 dark:border-transparent 
         ${
           errors[id]
             ? "border-red-error focus:border-red-error "

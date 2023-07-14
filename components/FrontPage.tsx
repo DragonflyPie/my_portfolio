@@ -18,12 +18,8 @@ const FrontPage = () => {
         <Lightbulb />
         <section>{dictionary.main.content[0][lang]}</section>
       </div>
-      <div className="flex flex-col items-center md:flex-row md:gap-10">
-        <Switch />
-        <section>{dictionary.main.content[0][lang]}</section>
-      </div>
       <div className="flex w-full flex-col items-center md:flex-row md:gap-10  ">
-        <Cogs />
+        <Switch />
         <section>{dictionary.main.content[1][lang]}</section>
       </div>
       <div className="flex flex-col items-center gap-10 md:flex-row md:items-end ">

@@ -25,7 +25,7 @@ const Layout = ({ children }: LayoutProps) => {
 
       <div className="h-screen">
         <main
-          className={`${rubik.variable} ${montserrat.variable} flex flex-col overflow-x-hidden scroll-smooth `}
+          className={`${rubik.variable} ${montserrat.variable} flex flex-col overflow-x-hidden scroll-smooth bg-whitish dark:bg-blackish`}
         >
           {children}
         </main>

@@ -12,10 +12,13 @@ module.exports = {
       },
       colors: {
         "red-error": "#ff3333",
+        whitish: "#F9F6F0",
         link: {
-          dark: "#00B9E8",
+          dark: "#2081C3",
           light: "#007FFF",
         },
+        blackish: "#111218",
+        dune: "#EEE4D3",
       },
       fontFamily: {
         heading: ["var(--font-inter)"],
