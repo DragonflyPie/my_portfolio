@@ -17,6 +17,7 @@ import {
 import FrontPage from "../components/FrontPage";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const contactsRef = useRef<HTMLDivElement>(null);
@@ -49,7 +50,10 @@ export default function Home() {
         >
           <ScrollDownIndicator />
         </div>
-        <div ref={projectsRef} className="w-full scroll-m-10 space-y-4 px-4 ">
+        <div
+          ref={projectsRef}
+          className="w-full scroll-m-10 space-y-4 px-2 md:px-4 lg:space-y-8 lg:px-8 "
+        >
           <Project
             lang={lang}
             img="/chatGPT.png"
@@ -86,6 +90,7 @@ export default function Home() {
         </div>
         <Contacts reference={contactsRef} />
       </div>
+      <Footer />
     </div>
   );
 }

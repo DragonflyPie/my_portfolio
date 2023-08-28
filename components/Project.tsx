@@ -3,6 +3,8 @@ import React from "react";
 import AnimateInside from "./AnimateInside";
 import AppearInside from "./AppearInside";
 import dictionary from "../intl/dictionary.json";
+import { ExternalLink } from "./Icons";
+import ProjectLink from "./ProjectLink";
 
 interface ProjectProps {
   img?: string;
@@ -24,10 +26,10 @@ const Project = ({
   lang = "en",
 }: ProjectProps) => {
   return (
-    <div className="flex  flex-col justify-between gap-6 overflow-y-auto rounded bg-dune p-5 dark:bg-slate-800 ">
-      <div className="flex flex-col gap-6 lg:flex-row">
-        <div className="relative aspect-video  basis-1/2 md:p-8">
-          <Image src={img} alt={title} fill className="border border-black" />
+    <div className="flex  flex-col justify-between gap-4 overflow-y-auto rounded bg-dune p-5  dark:bg-dark-blue md:gap-6 lg:gap-14 ">
+      <div className="flex flex-col gap-3 md:gap-5  lg:flex-row lg:gap-10 ">
+        <div className="relative aspect-video  basis-1/2">
+          <Image src={img} alt={title} fill className="rounded" />
         </div>
         <div className="flex basis-1/2 flex-col">
           {dictionary[description].map((section) => (
@@ -37,7 +39,7 @@ const Project = ({
           ))}
         </div>
       </div>
-      <div className="wrap flex flex-wrap items-center justify-center gap-3 md:gap-5 md:pl-5">
+      <div className="wrap flex flex-wrap items-center justify-center gap-3 md:gap-5 ">
         {techIcons.length
           ? techIcons.map((el, index) => {
               return (
@@ -49,19 +51,9 @@ const Project = ({
           : ""}
       </div>
 
-      <div className="flex items-center justify-center gap-20 p-4 lg:col-span-4">
-        <a
-          href={github}
-          className="text-link-light transition-colors hover:text-link-dark"
-        >
-          View code
-        </a>
-        <a
-          href={url}
-          className="text-link-light transition-colors hover:text-link-dark"
-        >
-          View site
-        </a>
+      <div className="flex items-center justify-center gap-20 lg:col-span-4">
+        <ProjectLink url={github} value="Code" />
+        <ProjectLink url={url} value="Website" />
       </div>
     </div>
   );

@@ -18,47 +18,64 @@ module.exports = {
           light: "#007FFF",
         },
         blackish: "#111218",
+        "dark-blue": "#1B2336",
         dune: "#EEE4D3",
       },
       fontFamily: {
         heading: ["var(--font-inter)"],
         navbar: ["var(--rubik-font)"],
         main: ["var(--montserrat-font)"],
+        outline: ["var(--library-font)"],
       },
       keyframes: {
         fly: {
           "0%, 100%": {
-            transform: "translateX(0)",
+            transform: "",
           },
           "5%": {
-            transform: "translateX(-10px) translateY(30px)",
+            transform: "translateX(-10px) translateY(10px)",
           },
           "15%": {
-            transform: "translateX(-20px) translateY(-30px)",
+            transform: "translateX(-30px) translateY(25px)",
           },
           "25%": {
-            transform: "translateX(-40px) translateY(10px)",
+            transform: "translateX(-45px) translateY(-10px)",
           },
           "35%": {
-            transform: "translateX(-50px) translateY(30px)",
+            transform: "translateX(-20px) translateY(-30px)",
           },
           "45%": {
-            transform: "translateX(0) translateY(30px)",
+            transform: "translateX(15px) translateY(10px)",
           },
           "55%": {
-            transform: "translateX(0) translateY(30px)",
+            transform: "translateX(35x) translateY(30px)",
           },
           "65%": {
-            transform: "translateX(0) translateY(30px)",
+            transform: "translateX(15px) translateY(40px)",
           },
           "75%": {
-            transform: "translateX(0) translateX(50px) translateY(30px)",
+            transform: "translateX(44px) translateY(15px)",
           },
           "85%": {
-            transform: "translateX(0) translateY(30px)",
+            transform: "translateX(10px) translateY(-15px)",
           },
           "95%": {
             transform: "translateX(0)  translateY(30px)",
+          },
+        },
+        flyHelper: {
+          "0%, 100%": {},
+          "10%": {
+            transform: "translateX(5px) translateY(-10px)",
+          },
+          "30%": {
+            transform: "translateX(-25px) translateY(25px)",
+          },
+          "50%": {
+            transform: "translateX(15x) translateY(-10px)",
+          },
+          "70%": {
+            transform: "translateX(-15px) translateY(5px)",
           },
         },
         flicker: {
@@ -71,10 +88,10 @@ module.exports = {
         },
         "reverse-spin": {
           from: {
-            transform: "rotate(360deg)",
+            transform: "rotate(0deg)",
           },
           to: {
-            transform: "rotate(0deg)",
+            transform: "rotate(-360deg)",
           },
         },
         lookout: {
@@ -101,7 +118,7 @@ module.exports = {
         },
         wiggle: {
           "0%": { transform: "rotate(0deg)" },
-          "50%": { transform: "rotate(20deg)" },
+          "50%": { transform: "rotate(15deg)" },
           "100%": { transform: "rotate(0deg)" },
         },
         appear: {
@@ -137,7 +154,7 @@ module.exports = {
       animation: {
         dash: "dash 7s linear infinite",
         "spin-slow": "spin 10s linear infinite",
-        "spin-reverse": "reverse-spin linear 10s infinite",
+        "spin-reverse": "reverse-spin linear 1s infinite",
         wiggle: "wiggle 1s ease-in infinite",
         appear: "appear 1s ease-in",
         "pulse-once": "pulsar ease-in 400ms",
@@ -146,6 +163,7 @@ module.exports = {
         blackout: "blackout 3s ease-in",
         flicker: "flicker 300ms infinite",
         fly: "fly 5s linear infinite",
+        flyHelper: "flyHelper 5s linear infinite",
       },
     },
   },

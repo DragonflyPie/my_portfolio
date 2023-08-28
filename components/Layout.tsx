@@ -1,6 +1,13 @@
 import Head from "next/head";
+import localFont from "next/font/local";
 import React from "react";
-import { Rubik, Montserrat } from "@next/font/google";
+import { Rubik, Montserrat } from "next/font/google";
+
+const library = localFont({
+  src: "../public/fonts/library.otf",
+  display: "swap",
+  variable: "--library-font",
+});
 
 const rubik = Rubik({
   variable: "--rubik-font",
@@ -25,7 +32,7 @@ const Layout = ({ children }: LayoutProps) => {
 
       <div className="h-screen">
         <main
-          className={`${rubik.variable} ${montserrat.variable} flex flex-col overflow-x-hidden scroll-smooth bg-whitish dark:bg-blackish`}
+          className={`${rubik.variable} ${montserrat.variable} ${library.variable} flex flex-col overflow-x-hidden scroll-smooth bg-whitish dark:bg-blackish`}
         >
           {children}
         </main>

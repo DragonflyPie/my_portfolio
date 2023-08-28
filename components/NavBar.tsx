@@ -5,7 +5,6 @@ import { RxDoubleArrowUp } from "react-icons/rx";
 import useOnTop from "./useOnTop";
 import NavLink from "./NavLink";
 import LocaleMenu from "./LocaleMenu";
-import { MoonIcon, SunIcon } from "./Icons";
 
 interface TopBarProps {
   handleClick: (elementRef: React.RefObject<HTMLDivElement>) => void;

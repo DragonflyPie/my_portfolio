@@ -16,20 +16,20 @@
   "main": {
     "heading": {
       "en": "Hi! I'm Vladimir, web developer.",
-      "ru": "Привет"
+      "ru": "Привет! Я Владимир, веб-разработчик."
     },
     "content": [
       {
         "en": "My passion lies in creating clean and thoughtful design, ensuring user's smooth and memorable experience.",
-        "ru": "My passion lies in creating clean and thoughtful design, ensuring user's smooth and memorable experience."
+        "ru": "Моя страсть - создание простых, но продуманных дизайнов, гарантирующих пользователю приятный и запоминающийся опыт."
       },
       {
         "en": "I firmly believe that rigid and maintainable code forms the necessary foundation of any project. As a lifelong learner, I always strive to stay updated with the latest web development technologies.",
-        "ru": "Привет"
+        "ru": "Я твердо убеждён, что организованный, удобный для сопровождения код является необходимой основой любого проекта. Я постоянно учусь и внимательно слежу за новейшими технологиями веб-разработки."
       },
       {
         "en": "I specialize in development using Typescript, React and Next.js. I am always eager to take on new challenges and expand my skill set. Here is my current tech stack.",
-        "ru": "Привет"
+        "ru": "Моя основная специализация - Typescript, React и Next.js. Но я всегда готов к новым вызовам и расширению своего арсенала. Мой полный текущий стек. "
       },
       {
         "en": "With a strong focus on clean design, responsiveness, and thoughtful user interactions, I am dedicated to delivering high-quality web solutions. I pay meticulous attention to detail, crafting every piece of the user interface with precision, ensuring that users can experience a smooth and memorable journey. ",
@@ -45,9 +45,23 @@
       }
     ]
   },
-  "footer": {
-    "en": "Hello",
-    "ru": "Привет"
+  "contacts": {
+    "heading": {
+      "en": "Contact Me",
+      "ru": "Напишите Мне"
+    },
+    "name": {
+      "en": "Your Name",
+      "ru": "Ваше Имя"
+    },
+    "email": {
+      "en": "Your Email",
+      "ru": "Ваш Email"
+    },
+    "message": {
+      "en": "Message",
+      "ru": "Сообщение"
+    }
   },
   "chatGPT": [
     {

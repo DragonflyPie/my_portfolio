@@ -46,11 +46,10 @@ export default async function handler(
   } catch (err) {
     if (err instanceof String) {
       res.status(400).json({ message: err });
-    }
-    if (err instanceof Error) {
+    } else if (err instanceof Error) {
       res.status(400).json({ message: err.message });
+    } else {
+      res.status(400).json({ message: "Bad request" });
     }
-
-    res.status(400).json({ message: "Bad request" });
   }
 }

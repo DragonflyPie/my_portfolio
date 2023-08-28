@@ -46,7 +46,7 @@ const Stack = () => {
         </IconWrapper>
         <div className="relative flex flex-col -space-y-px pl-3 ">
           <div className="absolute bottom-full right-2">
-            <IconWrapper size="sm" title="Django">
+            <IconWrapper size="sm-extrapixel" title="Django">
               <DjangoIcon />
             </IconWrapper>
           </div>

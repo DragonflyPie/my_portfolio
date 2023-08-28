@@ -11,7 +11,7 @@ interface InputProps {
 }
 const Input = ({ register, errors, id, label }: InputProps) => {
   return (
-    <div className="group relative w-full md:max-w-lg">
+    <div className="group relative w-full space-y-1 md:max-w-lg">
       <label
         htmlFor={id}
         className="p-2 text-lg group-focus-within:font-medium"
@@ -22,11 +22,11 @@ const Input = ({ register, errors, id, label }: InputProps) => {
       <input
         {...register(id)}
         id={id}
-        className={` w-full rounded-md  border border-gray-200 border-transparent p-4 font-light outline-none disabled:cursor-not-allowed disabled:opacity-70 
+        className={` w-full rounded-md  border bg-white p-4 font-light text-black outline-none disabled:cursor-not-allowed disabled:opacity-70 dark:bg-blackish dark:text-whitish
         ${
           errors[id]
-            ? "border-red-error focus:border-red-error"
-            : "border-gray-300 focus:border-black"
+            ? "border-red-error "
+            : "border-transparent dark:border-whitish"
         }`}
       />
 

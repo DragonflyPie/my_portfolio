@@ -7,6 +7,8 @@ import Input from "./Input";
 import TextareaInput from "./TextareaInput";
 import { useEffect, useState } from "react";
 import { useFetchMailApi } from "./useFetchApi";
+import { useRouter } from "next/router";
+import dictionary from "../intl/dictionary.json";
 
 const schema = yup
   .object({
@@ -25,6 +27,8 @@ const schema = yup
 export type FormData = yup.InferType<typeof schema>;
 
 const ContactForm = () => {
+  const { locale } = useRouter();
+  const lang = locale as "en" | "ru";
   const { emailState, postMail } = useFetchMailApi();
   const {
     register,
@@ -63,7 +67,7 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit(postMail)}
-      className="flex h-full flex-col items-center gap-5 p-3 md:p-5"
+      className="flex h-full min-w-full grow flex-col items-center  gap-6 p-3 lg:min-w-[600px] lg:gap-10"
     >
       {emailState === "error" ? (
         <h1>SOSISKA</h1>
@@ -74,30 +78,23 @@ const ContactForm = () => {
       )}
       <Input
         id={"name"}
-        label="Your Name"
+        label={dictionary.contacts.name[lang]}
         register={register}
         errors={errors}
       />
       <Input
         id={"email"}
-        label="Your Email"
+        label={dictionary.contacts.email[lang]}
         register={register}
         errors={errors}
       />
       <TextareaInput
         id={"message"}
-        label={"Your Message"}
+        label={dictionary.contacts.message[lang]}
         register={register}
         errors={errors}
       />
 
-      {/* <input {...register("email")} />
-      <p>{errors.email?.message}</p>
-
-      <input {...register("message")} />
-      <p>{errors.message?.message}</p>
-
-      <input type="submit" /> */}
       <button
         type="submit"
         disabled={!isValid || isSubmitting}
